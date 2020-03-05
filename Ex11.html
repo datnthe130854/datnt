@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <SCRIPT LANGUAGE="JavaScript">
+          <!--
+           function writeIt()
+          {
+              myfm.first_text.value=value
+             event.defaultPrevented();
+            document.getElementById('mylocation').style.display = value;
+            }
+            //-->
+    </SCRIPT>
+    <style>
+        table tr td{
+            border: 1px solid black;
+            background-color: cadetblue;
+        } 
+             table{
+                 border-collapse: collapse;
+             }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;color: chocolate;"> Đăng nhập</h1>
+    <form action="URL" name="myfm">
+        <table>
+            <tr>
+                <td>Mã người dùng:</td>
+                <td><input type="text"  name="first_text" value=""></td>
+            </tr>
+            <tr>
+                <td>Mật khẩu:</td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="button" value="Đồng ý" onclick="writeIt();">
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <div id="mylocation" >please enter</div>
+                    <!-- <input type="text" name="second_text"> -->
+                </td>
+            </tr>
+        </table>
+        
+    </form>
+</body>
+</html>

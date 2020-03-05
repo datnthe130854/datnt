@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="serve.js" method="POST">
+        <legend>Login</legend>
+        <label for="username">User name:</label>
+        <input type="text" name="username" required>
+        <br></br>
+        <label for=" password">Password:</label>
+        <input type="password" name="password">
+        <br></br>
+        <label for="male">Nam</label>
+        <input type="radio"  name="sex">
+        <label for="female">Nu</label>
+        <input type="radio"  name="sex">
+        <input type="submit" value="Xác nhận" onclick="onSubmit()">
+        <p id="showconfirm" style="display:none;">Bạn đã đăng nhập thành công</p>
+    </form>
+    <script>
+        function onSubmit(){
+            event.preventDefault();
+            document.getElementById("showconfirm").style.display="block"
+          
+
+        }
+    </script>
+</body>
+</html>
