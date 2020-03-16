@@ -34,28 +34,20 @@
             // alert(username);
             if (username === "") {
                 document.getElementById("username-error").innerHTML = "Vui lòng nhập tên!";
-
+            } else if (password.length < 6) {
+                document.getElementById("password-error").innerHTML = "Xin nhập lại pass!";
+            } else if (password === "") {
+                document.getElementById("password-error").innerHTML = "Vui lòng nhập mật khẩu!"
             } else if (username.length < 3) {
-                document.getElementById("username-error").innerHTML = "Tên phải dài hơn 3 kí tự!";
+                document.getElementById("username-error").innerHTML = "Tên phải dài hơn 3 kí tự!"
             }
             else {
-               
-                document.getElementById("username-error").innerHTML = "";
-            }
-            if (password === "") {
-                document.getElementById("password-error").innerHTML = "Vui lòng nhập mật khẩu!";
-            } else if (password.length < 6) {
-                document.getElementById("password-error").innerHTML = "Vui lòng nhập lại mật khẩu!";
-            }else{
                 document.getElementById("password-error").innerHTML = "";
             }
 
             // alert('hello class')
             // document.getElementById("show-confirm").style.display = "block";
-            
-            if(username.length>=3 && password.length>=6){
-                document.getElementById("show-confirm").innerHTML="Bạn đã đăng nhập thành công!"
-            }
+            document.getElementById("show-confirm").innerHTML = ;
         }
     </script>
 </body>

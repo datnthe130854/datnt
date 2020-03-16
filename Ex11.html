@@ -5,16 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
-    <SCRIPT LANGUAGE="JavaScript">
-          <!--
-           function writeIt()
-          {
-              myfm.first_text.value=value
-             event.defaultPrevented();
-            document.getElementById('mylocation').style.display = value;
-            }
-            //-->
-    </SCRIPT>
+   
     <style>
         table tr td{
             border: 1px solid black;
@@ -27,30 +18,63 @@
 </head>
 <body>
     <h1 style="text-align: center;color: chocolate;"> Đăng nhập</h1>
-    <form action="URL" name="myfm">
+    <form action="server.js" method="POST|GET">
         <table>
             <tr>
                 <td>Mã người dùng:</td>
-                <td><input type="text"  name="first_text" value=""></td>
+                <td><input type="text"  name="username" id="username"></td>
+                <p style="color: red;" id="username-error"></p>
             </tr>
             <tr>
                 <td>Mật khẩu:</td>
-                <td><input type="password" id="password"></td>
+                <td><input type="password" name="password" id="password"></td>
+                <p style="color: red;" id="password-error"></p>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">
-                    <input type="button" value="Đồng ý" onclick="writeIt();">
+                    <input type="button" value="Đồng ý" onclick="onSubmit();">
 
                 </td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center;">
-                    <div id="mylocation" >please enter</div>
+                    <p id="show-confirm" ></p>
                     <!-- <input type="text" name="second_text"> -->
                 </td>
             </tr>
         </table>
         
     </form>
+    <SCRIPT LANGUAGE="JavaScript">
+        <!--
+            function onSubmit() {
+            event.preventDefault();
+            var username = document.getElementById("username").value
+            var password = document.getElementById("password").value
+            // alert(username);
+            if (username === "" ) {
+                document.getElementById("username-error").innerHTML = "Vui lòng nhập tên!";
+            } else if (username.length < 3) {
+                document.getElementById("username-error").innerHTML = "Tên phải dài hơn 3 ký tự!";
+           } else {
+                document.getElementById("username-error").innerHTML = "";
+            }
+            if(password === ""){
+                document.getElementById("password-error").innerHTML="Vui lòng nhập mật khẩu!";
+            }else if(password.length<6){
+                document.getElementById("password-error").innerHTML="Vui lòng nhập lại mật khẩu";
+            }else{
+                document.getElementById("password-error").innerHTML="";
+            }
+         
+            // alert('hello class')
+            // document.getElementById("show-confirm").style.display = "block";
+            if(username.length>=3 && password.length>=6){
+                document.getElementById("show-confirm").innerHTML="Bạn đã đăng nhập thành công!"
+            }
+            
+        }
+          //-->
+  </SCRIPT>
 </body>
 </html>
