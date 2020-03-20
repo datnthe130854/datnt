@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+        color: darkgreen;
+    }
+
+    table tr td {
+        border: 1px solid black;
+        background-color: lightblue;
+        color: darkolivegreen;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <form>
+        <h1>Phiếu đăng ký tham gia chương trình khuyến mãi</h1>
+        <table>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" name="username" id="username"></td>
+                <p style="color: red;" id="username-error"></p>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text" name="address" id="address"></td>
+                <p style="color: red;" id="address-error"></p>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="tel" name="phone" id="phone"></td>
+                <p style="color: red;" id="phone-error"></p>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td><input type="radio" name="sex" value="Nam">Nam
+                    <input type="radio" name="sex" value="Nữ">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td><select>
+                        <option>Bác sĩ</option>
+                        <option>Kỹ sư </option>
+                        <option>Giáo viên </option>
+                        <option>Khác</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Chọn sản phẩm tham gia</td>
+                <td>
+                    <select name="product" size="4" id="product" multiple>
+                        <option value="1">Kem đánh răng </option>
+                        <option value="2">Bột giặt</option>
+                        <option value="3">Dầu gội đầu </option>
+                        <option value="4">Sữa tắm</option>
+                    </select>
+                    <p style="color: red;" id="product-error"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Sô lượng người tham gia</td>
+                <td><input type="number" name="number" id="number"></td>
+                <p style="color: red;" id="number-error"></p>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit" value="Đồng ý" onclick="onSubmit()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <p id="my_location" style="color: deeppink;"></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function onSubmit() {
+            event.preventDefault();
+            var username = document.getElementById("username").value
+            var address = document.getElementById("address").value
+            var phone = document.getElementById("phone").value
+            var product = document.getElementsByName("product").value
+            var number = document.getElementById("number").value
+            if (username === "") {
+                document.getElementById("username-error").innerHTML = "Vui lòng nhập tên";
+            } else {
+                document.getElementById("username-error").innerHTML = "";
+            }
+            if (address === "") {
+                document.getElementById("address-error").innerHTML = "Vui lòng nhập địa chỉ";
+            } else {
+                document.getElementById("address-error").innerHTML = "";
+            }
+            if (phone === "") {
+                document.getElementById("phone-error").innerHTML = "Vui lòng nhập số điện thoại";
+            } else {
+                document.getElementById("phone-error").innerHTML = "";
+            }
+
+            if (number === "") {
+                document.getElementById("number-error").innerHTML = "Nhập số lượng người";
+            } else {
+                document.getElementById("number-error").innerHTML = "";
+            }
+            
+            if(number>0){
+            document.getElementById("my_location").innerHTML = "Bạn đã đăng kí thành công";
+            }
+            }
+    </script>
+
+</body>
+
+</html>
