@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table tr td {
+        border: 1px solid black;
+        background-color: lightyellow;
+
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<body>
+    <form>
+        <h1 style="text-align: center;color: rgb(28, 84, 187);">Đăng kí du lịch</h1>
+        <table>
+            <tr>
+                <td style="color: cornflowerblue;">Họ và tên</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td style="color: cornflowerblue;">Địa chỉ</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td style="color:cornflowerblue ;">Điện thoại</td>
+                <td><input type="tel"></td>
+            </tr>
+            <tr>
+                <td style="color: cornflowerblue;">Khách Việt Nam </td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td style="color: cornflowerblue;">Chọn tour</td>
+                <td><select>
+                        <optgroup label="Miền Bắc">
+                            <option>Hà Nội - Hạ Long - SaPa</option>
+                            <option>Hà Nội - Chùa Hương - Ninh Bình</option>
+                            <option>Hà Nội - Cát Bà - Tuần Châu</option>
+                        </optgroup>
+                        <optgroup label="Miền Trung">
+                            <option>Huế - Bạch Mã - Đà Nẵng</option>
+                            <option>Nha Trang - Đà Lạt </option>
+                            <option>Buôn Mê Thuột - GiaLai - KonTum</option>
+                        </optgroup>
+                        <optgroup label="Miền Nam">
+                            <option>TP HCM - Cần Thơ - Cà Mau</option>
+                            <option>TP HCM - Mỹ Tho</option>
+                        </optgroup>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: cornflowerblue;">Phương tiện</td>
+                <td><input type="radio" name="Phương tiện" value="Máy bay">Máy bay
+                    <input type="radio" name="Phương tiện" value="Ô tô">Ô tô
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <fieldset style="color: cornflowerblue;">
+                        <legend style="color: darkgoldenrod;">Số lượng đoàn khách</legend>
+                        Người lớn <input type="number" name="Người lớn" value="Người lớn">
+                        Trẻ em <input type="number">
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: cornflowerblue;">Ghi chú thêm </td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit" value="Đồng ý" onclick="onSubmit()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;color: darkgoldenrod;">
+                    <div id="location"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    function onSubmit() {
+        event.preventDefault();
+        document.getElementById("location").innerHTML = "Bạn đã đăng kí thành công!";
+    }
+</script>
+
+</html>
